@@ -1,0 +1,17 @@
+# NPM
+node_modules
+
+# coverage
+coverage
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### VS Code ###
+.vscode/
+
+# misc
+.DS_Store

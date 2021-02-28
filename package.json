@@ -4,11 +4,11 @@
   "type": "module",
   "description": "Hello world",
   "scripts": {
+    "start": "node src/server.js",
     "test": "jest",
     "test:coverage": "jest --coverage",
     "build": "jest --coverage"
   },
-  "keywords": [],
   "author": "jbcazaux",
   "license": "ISC",
   "dependencies": {

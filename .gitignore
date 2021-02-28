@@ -1,7 +1,8 @@
 # NPM
 node_modules
 
-# coverage
+# test
+test-report.xml
 coverage
 
 ### IntelliJ IDEA ###

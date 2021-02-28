@@ -1,5 +1,11 @@
 trigger:
   - master
+pr:
+  drafts: false
+  autoCancel: true
+  branches:
+    include:
+      - master
 
 resources:
   - repo: self
@@ -16,7 +22,7 @@ stages:
   - stage: Build
     displayName: Build and push stage
     jobs:
-      - job: Install & Test
+      - job: InstallAndTest
         steps:
           - task: NodeTool@0
             inputs:
@@ -40,7 +46,8 @@ stages:
               reportDirectory: 'coverage'
               failIfCoverageEmpty: true
       - job: Build
-        displayName: Build & Push Docker Image
+        condition: eq(variables['Build.SourceBranch'], 'refs/heads/master')
+        displayName: 'Build and Push Docker Image'
         pool:
           vmImage: $(vmImageName)
         steps:

@@ -10,7 +10,7 @@ resources:
 
 variables:
   # Container registry service connection established during pipeline creation
-  dockerRegistryServiceConnection: 'f9d4e609-80a3-45da-99c1-2c98b599a6a9'
+  dockerRegistryServiceConnection: 'd1763980-54b6-42ff-9197-65689110f2c5'
   imageRepository: 'helloapp'
   containerRegistry: 'codoxacr.azurecr.io'
   dockerfilePath: 'Dockerfile'

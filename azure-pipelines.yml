@@ -43,10 +43,9 @@ stages:
           - task: PublishCodeCoverageResults@1
             inputs:
               codeCoverageTool: 'Cobertura'
-              summaryFileLocation: 'cobertura-coverage.xml'
+              summaryFileLocation: 'coverage/cobertura-coverage.xml'
               reportDirectory: 'coverage'
               failIfCoverageEmpty: true
-
       - job: Build
         displayName: Build Docker Image
         pool:

@@ -26,6 +26,9 @@
     "transform": {
       "^.+\\.js$": "babel-jest"
     },
-    "testResultsProcessor": "./node_modules/jest-junit-reporter"
+    "testResultsProcessor": "./node_modules/jest-junit-reporter",
+    "coverageReporters": [
+      "cobertura"
+    ]
   }
 }

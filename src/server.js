@@ -16,7 +16,10 @@ router.get('/', async ctx => {
     client = await pgPool.connect()
     const clientIP = ctx.request.ip
     await client.query('INSERT INTO visitors (ip, visit_date) VALUES ($1, $2)', [clientIP, new Date()])
-  } finally {
+  } catch (error) {
+    console.error(error)
+  }
+  finally {
     client?.release()
   }
   ctx.body = hello('world')
@@ -28,6 +31,8 @@ router.get('/visitors', async ctx => {
     client = await pgPool.connect()
     const result = await client.query('SELECT ip, visit_date FROM visitors')
     ctx.body = result.rows.map(r => ({ [r.ip]: r.visit_date }))
+  } catch (error) {
+    console.error(error)
   } finally {
     client?.release()
   }
